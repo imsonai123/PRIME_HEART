@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<math.h>
+#include<conio.h>
+
+int main()
+{
+	int i,n;
+	float sx1=0.0,sx2=0.0,sy1=0.0,sx1y1=0.0,a,b,x[10],y[10];
+	printf("\t \t OUTPUT \n");
+	printf("\n The Number of Given Datas :");
+	scanf("%d",&n);
+	printf("x \t\t y\n");
+	printf("...... \n");
+	for(i=1;i<=n;i++)
+	scanf("%f%f",& x[i],& y[i]);
+	for(i=1;i<=n;i++)
+	{
+		sx1=sx1+x[i];
+		sx2=sx2+x[i]*x[i];
+		sy1=sy1+y[i];
+		sx1y1=sx1y1+x[i]*y[i];
+	}
+	b=(n*sx1y1-sx1*sy1)/(n*sx2-sx1*sx1);
+	a=(sy1-b*sx1)/n;
+	printf("\n The Required Fixed Line is : \n");
+	printf("\n \t y=%2.3f +(%2.3f)x",a,b);
+	
+}
