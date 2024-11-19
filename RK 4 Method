@@ -1,0 +1,35 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+
+float f(float x , float y)
+{
+	return ((x*x)+(y*y*x));
+}
+ int main()
+ {
+ 	int i=0;
+ 	float x0,x,y0,x1,h,y,k1,k2,k3,k4;
+ 	printf("\n Enter the point of estimation :");
+ 	scanf("%f",& x1);
+ 	printf("\n Enter the initial points x0,y0:");
+ 	scanf("%f%f",&x0,&y0);
+ 	printf("\n Enter the step length h:");
+ 	scanf("%f",&h);
+ 	x=x0;
+ 	y=y0;
+ 	printf("\n Table \n");
+ 	while(x<x1)
+ 	{
+ 		k1=h*f(x,y);
+ 		k2=h*f(x+(h/2),y+(k1/2));
+ 		k3=h*f(x+(h/2),y+(k2/2));
+ 		k4=h*f(x+h,y+k3);
+ 		y=y+((k1+(2*k2)+(2*k3)+k4)/6);
+ 		x=x+h;
+ 		i++;
+ 		printf("\n Number of Iteration is = %d \t\t x= %4.3f \t\t y(%f)=%f",i,x,x,y);
+ 		
+	 }
+ 	
+ }
