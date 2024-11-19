@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<math.h>
+#include<conio.h>
+
+int main()
+
+{
+	int i,j,k,n ;
+	float a[10][10],x[10],y[10],m;
+	printf("\n Order of the Matrix is :");
+	scanf("%d",& n);
+	printf("\n Enter the Elements of the Matrix Row wise : \n");
+	for(i=1;i<=n;i++)
+	{
+		for(j=1;j<=n;j++)
+		scanf("%f", & a[i][j]);
+		x[i]=1;
+	}
+	for(k=1;k<=15;k++)
+	{
+		for(i=1;i<=n;i++)
+		{
+			y[i]=0;
+			for(j=1;j<=n;j++)
+			y[i]=y[i]+a[i][j]*x[j];
+			
+		}
+		m=y[1];
+		for(i=2;i<=n;i++)
+		{
+			if(m<y[i])
+			m=y[i];
+		}
+		for(i=1;i<=n;i++)
+		x[i]=y[i]/m;
+	}
+	printf("\n The Largest Eigen Value is %f ",m);
+}
