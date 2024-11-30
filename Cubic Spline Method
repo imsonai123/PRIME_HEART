@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+
+int main()
+{
+	
+	float x0,x1,x2,y0,y1,y2,x,h,m,s;
+	x0=0.125;
+	x1=0.175;
+	x2=0.225;
+	y0=1.335;
+	y1=1.4962;
+	y2=1.6788;
+	printf("\n Enter the value of x :");
+	scanf("%f",&x);
+	h=x1-x0;
+	m=6*(y2-2*y1+y0)/(4*h*h);
+	y0=y0*(x1-x);
+	y1=(x-x0)*(y1-h*h*m/6);
+	y2=(m/6)*(x2-x1)*(x2-x1)*(x2-x1);
+	s=(y0+y1+y2)/h;
+	printf("\n The Interpoltion value is =%8.4f ",s);
+}
